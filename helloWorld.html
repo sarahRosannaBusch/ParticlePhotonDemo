@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<body>
+  <center>
+  <br>
+  <p>
+    Tell your device what to do!
+  </p>
+  <hr><br>
+  <!-- the following request is based on https://community.particle.io/t/reading-spark-variables-with-your-own-html-file/4148 -->
+  <button id='getButton' onclick='readPhotoresistor()'> Read Photoresistor </button><br><br>
+  <span id='light'></span><br><br>
+  <span id='timeStamp'></span><br><br>
+  <hr><br>
+  <!-- initialize comms with a specific Particle device -->
+  <!-- devices/your-device-ID-goes-here ... access_token=your-access-token-goes-here -->
+  <form action="https://api.particle.io/v1/devices/3e0031000847343133353336/led?access_token=4ed978c8d44ee74e0da0a2e08db5dcd401ce9958" method="POST">
+    <input type="radio" name="args" value="on">Turn the LED on.
+    <br>
+    <input type="radio" name="args" value="off">Turn the LED off.
+    <br>
+    <br>
+    <input type="submit" value="Do it!">
+  </form>
+  <hr><br>
+  <p>
+    This demo code for communicating with a Particle Photon via the cloud is based on the
+    <a href='https://docs.particle.io/guide/getting-started/examples/photon/#read-your-photoresistor-function-and-variable' target='_blank'> Particle Docs Example Code</a>
+    with help from
+    <a href='https://community.particle.io/t/reading-spark-variables-with-your-own-html-file/4148' target='_blank'> Particle Community forums</a>
+    and was modified by
+    <a href='https://sarahrosannabusch.github.io'> Sarah Rosanna Busch</a>.
+  </p>
+  </center>
+  </body>
+  <script src='scripts.js'></script>
+  <!-- to be able to get JSON value from Particle cloud: -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</html>
